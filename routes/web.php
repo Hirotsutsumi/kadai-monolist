@@ -19,6 +19,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('items', 'ItemsController', ['only' => ['create']]);
 });
+Route::get('ranking/want', 'RankingController@want')->name('ranking.want');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('items', 'ItemsController', ['only' => ['create', 'show']]);
     Route::post('want', 'ItemUserController@want')->name('item_user.want');
